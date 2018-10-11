@@ -36,4 +36,25 @@ public class Trie {
 			size++;
 		}
 	}
+	public boolean contains(String word) {
+		Node cur=root;
+		for(int i=0;i<word.length();i++) {
+			char c=word.charAt(i);
+			if(cur.next.get(c)==null)
+				return false;
+			cur=cur.next.get(c);
+		}
+		return cur.isWord;
+	}
+	//查询是否有prefix为前缀的单词
+	private boolean isPrefix(String prefix) {
+		Node cur=root;
+		for(int i=0;i<prefix.length();i++) {
+			char c=prefix.charAt(i);
+			if(cur.next.get(c)==null)
+				return false;
+			cur=cur.next.get(c);
+		}
+		return true;
+	}
 }
