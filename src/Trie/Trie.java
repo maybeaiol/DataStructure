@@ -8,7 +8,7 @@ public class Trie {
 		public TreeMap<Character, Node> next;
 		public Node(boolean isWord) {
 			this.isWord=isWord;
-			next=new TreeMap<>();
+			next=new TreeMap<>();//每个节点有不定量的指针
 		}
 		public Node() {
 			this(false);
